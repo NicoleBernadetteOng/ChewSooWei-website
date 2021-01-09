@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chew Soo Wei</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/swIcon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Quicksand" rel="stylesheet">
+</head>
+    
+<header>
+    <!--This is where the header HTML codes will be loaded -->
+    <div w3-include-html="top-navigation.html"></div>
+</header>
+    
+<body onload="displayFeedback()">
+
+    <!-- This is where the Feedback Thank Modal HTML codes will be loaded -->
+    <div w3-include-html="feedbackThank-modal.html"></div>
+
+    <div class = "feedback">
+
+        <button type="button" class="writeFeedbackButton"><a href="writeFeedback.html">WRITE FEEDBACK</a></button>
+
+            <table border="1" width="1120" height="200">
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th class="title">Title</th>
+                    <th class="feedbackDetails">Feedback</th>
+                    <th class="datePosted">Date Posted</th>
+                </tr>
+            </thead>
+            <tbody id="listings">
+            </tbody>
+        </table>
+
+    </div>
+    
+    
+    <script src="js/popper.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap-native-v4.js"></script>
+    <script src="js/w3.js"></script>
+    <script>
+        //to bring in the other html on the fly into this order.html
+        w3.includeHTML();
+    </script>
+    <script src="js/app.js"></script>
+</body>
+
+
+<script>
+
+    function displayFeedback() {
+        var request = new XMLHttpRequest();
+        
+        request.open("GET", "/feedback", true);
+        request.setRequestHeader("Content-Type", "application/json");
+
+        request.onload = function() {
+            // We create a 'feedback' variable to store data of all feedback retrieved from the server.
+            // All feedback will be stored in the form of an array in the feedback variable.
+            var feedback = JSON.parse(request.responseText);
+            console.log(feedback);
+        
+            // Array of items
+            //var feedbackItems = feedbackItems.length;
+        
+            var feedbackListings = document.getElementById("listings");
+        
+            // Loop through the array of cart items
+            for (var i = 0; i < feedback.length; i++) {
+        
+                //var orderItem = "<p>" + order[i].name + "</p>";
+                var feedbackItem = `<tr>
+                    <td>` + feedback[i].name + `</td>
+                    <td class="item">` + feedback[i].title + `</td>
+                    <td class="quantity">` + feedback[i].feedback_details + `</td>
+                    <td>` + feedback[i].submission_date + `</td>
+                    </tr>`;
+                feedbackListings.insertAdjacentHTML("afterbegin", feedbackItem);
+        
+                }
+            };
+            // Send the request to get info of all feedback.
+        request.send();
+    }
+     
+</script>
+
+    
+<footer>
+    <!--This is where the footer HTML codes will be loaded -->
+    <div w3-include-html="footer.html"></div>
+</footer>
+</html>

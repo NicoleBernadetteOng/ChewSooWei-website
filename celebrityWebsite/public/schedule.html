@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chew Soo Wei</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Quicksand" rel="stylesheet">
+</head>
+    
+<header>
+    <!--This is where the header HTML codes will be loaded -->
+    <div w3-include-html="top-navigation.html"></div>
+</header>
+    
+<body>
+
+<div id="schedulePagebg">
+        <iframe id="calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=nicoleong0318%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FSingapore" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+   
+    <style>  
+        #schedulePagebg {
+            /* position: relative;
+            width: 100%;
+            min-height: 600px;
+            background-image: url(images/ariana.JPG);
+            background-size: cover;
+            height: auto; */
+
+            background-image: url("images/soowei11.PNG");
+            min-height: 600px; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+
+    
+    <script src="js/popper.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap-native-v4.js"></script>
+    <script src="js/w3.js"></script>
+    <script>
+        //to bring in the other html on the fly into this order.html
+        w3.includeHTML();
+    </script>
+    <script src="js/app.js"></script>
+</body>
+
+    
+<footer>
+    <!--This is where the footer HTML codes will be loaded -->
+    <div w3-include-html="footer.html"></div>
+</footer>
+</html>

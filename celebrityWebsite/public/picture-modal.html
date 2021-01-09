@@ -1,0 +1,37 @@
+<div class="modal fade" id="pictureModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body px-5">
+                
+                <h3 id="food-name"></h3>
+                <img id="foodimg" src="#">
+                <p>Price: $</p><p id="food-price" style="margin-left:-39px"></p><br>
+                <p>Description: </p><p id="food-description" style="margin-left:-32px"></p><br>
+                <p>Calories: </p><p id="food-calories" style="margin-left:-32px"></p><br>
+                
+                <label>Quantity:</label>
+                <select id="food-quantity">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                
+                <div class="modal-footer">
+                    <input type="hidden" id="foodId" value="" />
+                    <button type="button" onclick="addToCart(this)" class="orderButton" id="addOrder" data-dismiss="modal" style="float: none; margin: 0 auto;">Order</button>
+                </div>
+                
+            </div>
+        </div>   
+    </div>
+</div>
+
+
+

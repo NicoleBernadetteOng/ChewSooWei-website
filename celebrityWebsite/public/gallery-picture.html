@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chew Soo Wei</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/swIcon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Quicksand" rel="stylesheet">
+</head>
+    
+<header>
+    <!--This is where the header HTML codes will be loaded -->
+    <div w3-include-html="top-navigation.html"></div>
+</header>
+    
+<body class="galleryPage">
+    <!-- This is where the Picture Modal HTML codes will be loaded -->
+    <div w3-include-html="picture-modal.html"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+    
+    <h2 class="galleryHead">Gallery | Pictures</h2>
+
+    <div class="categories">
+        <a href="gallery-picture.html">Pictures</a>
+        <a href="gallery-videos.html">Videos</a>
+    </div>
+
+<div class="teamGallery">
+
+    <div class="theteam">
+        <a target="_blank"><img class="myImage" src="images/soowei5.PNG" alt="Nicole Ong"></a>
+        <div class="desc">Exhibition</div>
+    </div>
+
+    <div class="theteam">
+        <a target="_blank"><img class="myImage" src="images/soowei6.PNG" alt="Song Joong Ki"></a>
+        <div class="desc">Cathay's Dancesport Competition</div>
+    </div>
+
+    <div class="theteam">
+        <a target="_blank"><img class="myImage" src="images/soowei7.PNG" alt="Diana"></a>
+        <div class="desc">8 Days</div>
+    </div>
+
+    <div class="lastRow">
+        <a target="_blank"><img class="myImage" src="images/soowei8.PNG" alt="Amanda Steele"></a>
+        <div class="desc">313 Runway Show</div>
+    </div>
+
+    <div class="lastRow">
+        <a target="_blank"><img class="myImage" src="images/soowei9.PNG" alt="Justin"></a>
+        <div class="desc">Ikea</div>
+    </div>
+
+    <div class="lastRow">
+        <a target="_blank"><img class="myImage" src="images/soowei10.PNG" alt="Lily"></a>
+        <div class="desc">Event</div>
+    </div>
+    
+</div>
+
+
+      <!-- <div class="gallery"> --parent node 
+        --First child --
+        <a target="_blank">
+          <img src="images/food12.JPG" alt="Christmas Oatmeal topped with Chocolate">
+        </a>
+        <!--Second child --
+        <div class="desc">Christmas Oatmeal</div>
+        <div class="desc"><b>$10.00</b></div>
+        <input type="hidden" class="food_id" value="F0001" />
+        <button type="button" class="orderButton" onClick="showFood(this)" data-toggle="modal" data-target="#myModal">Order</button>
+      </div>
+    
+      <div class="gallery">
+        <a target="_blank">
+          <img src="images/food11.JPG" alt="Almond Oatmeal with Granola">
+        </a>
+        <div class="desc">Almond Oatmeal</div>
+          <div class="desc"><b>$7.90</b></div>
+          <input type="hidden" class="food_id" value="F0002" />
+          <button type="button" class="orderButton" onClick="showFood(this)" data-toggle="modal" data-target="#myModal">Order</button>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank">
+          <img src="images/food1.JPG" alt="Chocolate Oatmeal with Peanut Butter">
+        </a>
+        <div class="desc">Chocolate Oatmeal with Peanut Butter</div>
+          <div class="desc"><b>$8.90</b></div>
+          <input type="hidden" class="food_id" value="F0003" />
+          <button type="button" class="orderButton" onClick="showFood(this)" data-toggle="modal" data-target="#myModal">Order</button>
+      </div> -->
+        
+</div>
+
+
+<script src="js/popper.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap-native-v4.js"></script>
+<script src="js/w3.js"></script>
+
+<script>
+//to bring in the other html on the fly into this order.html
+w3.includeHTML();
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+<script>
+
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementsByClassName('myImage');
+    var modalImg = document.getElementById("img01");
+    // var captionText = document.getElementById("caption");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+</script>
+
+    
+<footer>
+    <!--This is where the footer HTML codes will be loaded -->
+    <div w3-include-html="footer.html"></div>
+</footer>
+</html>
+
+
